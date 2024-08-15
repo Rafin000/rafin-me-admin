@@ -12,8 +12,9 @@ const Sidebar = ({ isOpen, onClose }) => {
             <li><a href="/">Profile</a></li>
             <li><a href="/all-blogs">All Blogs</a></li>
             <li><a href="/blog">Create Blog</a></li>
-            <li><a href="/social-media">Social Media Links</a></li>
+            <li><a href="/links">Social Media Links</a></li>
             <li><a href="/skills">Skills</a></li>
+            <li><a href="/timeline">Timeline</a></li>
             <li><a href="/testimonials">Testimonials</a></li>
         </div>
         <li><a href="/logout">Logout</a></li>

@@ -1,0 +1,23 @@
+.education-section {
+    margin-bottom: 2rem;
+}
+
+.education-item {
+margin-bottom: 1rem;
+}
+
+.education-section button {
+    padding: 0.4rem;
+    font-size: .775rem;
+    margin-top: .5rem;
+    border-radius: .3rem;
+    border: 1px solid #d4b059;
+    color: #ccc;
+  }
+  
+  .education-section button:hover {
+    border: 1px solid #ccc;
+    background-color: #d4b059;
+    color: #06080b;
+    font-weight: 600;
+  }

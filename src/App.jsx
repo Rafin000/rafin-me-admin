@@ -4,6 +4,8 @@ import Layout from './components/Layout';
 
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Links from './pages/Links';
+import Timeline from './pages/Timeline';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Profile />} />
           <Route path="/blog" element={<Home />} />
+          <Route path="/links" element={<Links/>} />
+          <Route path="/timeline" element={<Timeline/>} />
         </Routes>
       </Layout>
     </BrowserRouter>

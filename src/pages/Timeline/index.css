@@ -1,0 +1,49 @@
+.timeline-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 6rem;
+  }
+  
+  .timeline-page h2, h3{
+    color: #d4b059;
+  }
+
+  .timeline-page-content{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 10rem;
+  }
+  
+  .timeline-page button {
+    margin-top: .5rem;
+    border: 1px solid #d4b059;
+    color: #ccc;
+  }
+  
+  .timeline-page button:hover {
+    border: 1px solid #ccc;
+    background-color: #d4b059;
+    color: #06080b;
+    font-weight: 600;
+  }
+  
+  .timeline-page [type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    font-size: 0.775rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .timeline-page ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+
+  
