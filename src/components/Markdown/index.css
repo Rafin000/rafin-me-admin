@@ -7,18 +7,22 @@
     margin-block: 1rem;
   }
   
-  .markdown-editor,
-  .markdown-preview {
+  .markdown-editor {
     border: 1px solid #ccc;
     border-radius: 8px 0px 0px 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 2rem;
     overflow: auto;
+    /* max-width: 100%; */
   }
 
-  .markdown-preview {
+  /* .markdown-preview {
     width: 50%;
     height: 29.75rem;
     border-radius: 0px 8px 8px 0px;
     background-color: white;
-  }
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    overflow: auto;
+  } */

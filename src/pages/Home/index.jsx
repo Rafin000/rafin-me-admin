@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import './index.css';
 import Markdown from '../../components/Markdown';
@@ -8,31 +9,43 @@ const Home = () => {
   const [readingTime, setReadingTime] = useState('');
   const [author, setAuthor] = useState('');
   const [thumbnail, setThumbnail] = useState('');
-  const [tags, setTags] = useState('');
+  const [tags, setTags] = useState([]);
+  const [tagInput, setTagInput] = useState('');
+  const [markdown, setMarkdown] = useState('# Your Markdown Here'); 
+
+  const handleTagAdd = () => {
+    if (tagInput) {
+      setTags([...tags, tagInput]);
+      setTagInput('');
+    }
+  };
 
   const handleSubmit = async () => {
+    const readingTimeInt = parseInt(readingTime, 10);
+
     const postData = {
       title: title,
-      author: 'Admin'
+      summary: shortDescription,
+      reading_time: readingTimeInt,
+      thumbnail_url: thumbnail,
+      tags: tags,
+      content: markdown,
+      author: author
     };
-
+  
     try {
-      const response = await fetch('http://localhost:5000/api/v1/blog-service/blog', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(postData)
-      });
-
-      if (response.ok) {
+      const response = await axios.post('http://127.0.0.1:5000/api/v1/blogs/', postData);
+  
+      if (response.status === 200 || response.status === 201) {
         console.log('Successfully created blog post');
         setTitle('');
         setShortDescription('');
         setReadingTime('');
         setAuthor('');
         setThumbnail('');
-        setTags('');
+        setTags([]);
+        setTagInput('');
+        setMarkdown('# Your Markdown Here'); 
       } else {
         console.error('Failed to create blog post');
       }
@@ -88,7 +101,8 @@ const Home = () => {
       <label>
         Content:
       </label>
-      <Markdown />
+      <Markdown markdown={markdown} setMarkdown={setMarkdown} />
+      
       <label>
         Blog Thumbnail:
         <input
@@ -103,10 +117,18 @@ const Home = () => {
         Tags:
         <input
           type="text"
-          placeholder="Relevent tags"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
+          placeholder="Add a tag"
+          value={tagInput}
+          onChange={(e) => setTagInput(e.target.value)}
         />
+        <button type="button" onClick={handleTagAdd}>Add Tag</button>
+        <div>
+          {tags.map((tag, index) => (
+            <span key={index} className="tag">
+              {tag}
+            </span>
+          ))}
+        </div>
       </label>
       
       <div>

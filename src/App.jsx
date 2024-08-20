@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Links from './pages/Links';
 import Timeline from './pages/Timeline';
+import Blog from './pages/Blog';
+import EditBlogCard from './pages/Blog/BlogCard/EditBlogCard';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/blog" element={<Home />} />
           <Route path="/links" element={<Links/>} />
           <Route path="/timeline" element={<Timeline/>} />
+          <Route path="/all-blogs" element={<Blog/>} />
+          <Route path="/edit-blog/:postId" element={<EditBlogCard/>} />
         </Routes>
       </Layout>
     </BrowserRouter>
