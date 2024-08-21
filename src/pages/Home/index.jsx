@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import './index.css';
 import Markdown from '../../components/Markdown';
+import Tags from '../../components/tag';
 
 const Home = () => {
   const [title, setTitle] = useState('');
@@ -121,14 +122,8 @@ const Home = () => {
           value={tagInput}
           onChange={(e) => setTagInput(e.target.value)}
         />
+        <Tags tags={tags}/>
         <button type="button" onClick={handleTagAdd}>Add Tag</button>
-        <div>
-          {tags.map((tag, index) => (
-            <span key={index} className="tag">
-              {tag}
-            </span>
-          ))}
-        </div>
       </label>
       
       <div>

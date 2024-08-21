@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom'; // Updated import
+import { Link, useNavigate } from 'react-router-dom'; // Updated import
 import axios from 'axios'; // Import axios for delete functionality
 import './index.css';
 
 /* eslint-disable react/prop-types */
 const BlogCard = ({ post }) => {
-    const navigate = useNavigate(); // For navigation
+    const navigate = useNavigate(); 
     const options = {
         year: 'numeric',
         month: 'short',
@@ -12,7 +12,6 @@ const BlogCard = ({ post }) => {
     };
 
     const handleEdit = () => {
-        // Navigate to the edit page with the post ID
         navigate(`/edit-blog/${post.id}`);
     };
 
@@ -21,7 +20,6 @@ const BlogCard = ({ post }) => {
             const response = await axios.delete(`http://127.0.0.1:5000/api/v1/blogs/${post.id}`);
             if (response.status === 200) {
                 console.log('Successfully deleted blog post');
-                // Optionally, you can trigger a re-fetch of posts or refresh the page
             } else {
                 console.error('Failed to delete blog post');
             }
@@ -36,7 +34,7 @@ const BlogCard = ({ post }) => {
                 {new Date(post.created_at * 1000).toLocaleDateString('en-US', options)}
             </p>
             <div className='blog-post-content'>
-                <a href={`/blog/${post.id}`} className='blog-post-title'>{post.title}</a>
+                <Link href={`/blog/${post.id}`} className='blog-post-title'>{post.title}</Link>
                 <div className='blog-post-actions'>
                     <button className='edit-button' onClick={handleEdit}>Edit</button>
                     <button className='delete-button' onClick={handleDelete}>Delete</button>

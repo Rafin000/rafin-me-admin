@@ -1,0 +1,25 @@
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    /* margin-top: 1rem; */
+  }
+  
+  .tag {
+    background-color: #d4b059;
+    border-radius: .875rem;
+    padding: .2rem;
+    padding-inline: .875rem;
+    font-size: small;
+    font-weight: bold;
+    color: #333;
+    cursor: default;
+  }
+
+  .tag-container button{
+    background-color: transparent;
+    border-radius: 50%;
+    padding: .1rem;
+    color: #ccc;
+    transform: translateY(.2rem);
+  }
