@@ -1,0 +1,40 @@
+.skill {
+    display: flex;
+    align-items: center;
+    /* gap: 4rem; */
+    justify-content: space-between;
+    border-radius: .4rem;
+    padding: 1rem;
+    box-shadow: 0 4px 20px #06080b; 
+  }
+  
+  .skill img {
+    width: 12%;
+  }
+  /* .skill:hover {
+    background: linear-gradient(to right, #c59e41, #b99338);
+  }
+   */
+  .skill-content {
+    color: #d4b059;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: larger;
+  }
+  
+  .skill:hover .skill-content  {
+    color: #ffffff;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 2rem
+  }
+  
+  .edit-skill input{
+    margin-bottom: 1rem;
+
+  }

@@ -8,6 +8,8 @@ import Links from './pages/Links';
 import Timeline from './pages/Timeline';
 import Blog from './pages/Blog';
 import EditBlogCard from './pages/Blog/BlogCard/EditBlogCard';
+import Skills from './pages/Skills';
+import Testimonials from './pages/Testimonials';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/" element={<Profile />} />
           <Route path="/blog" element={<Home />} />
           <Route path="/links" element={<Links/>} />
+          <Route path="/skills" element={<Skills/>} />
+          <Route path="/testimonials" element={<Testimonials/>} />
           <Route path="/timeline" element={<Timeline/>} />
           <Route path="/all-blogs" element={<Blog/>} />
           <Route path="/edit-blog/:postId" element={<EditBlogCard/>} />
