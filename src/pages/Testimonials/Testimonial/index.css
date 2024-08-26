@@ -5,16 +5,15 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   
-  button {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    background-color: #d4b059;
-    border: none;
-    color: #fff;
-    cursor: pointer;
+  .testimonial button {
+    margin-bottom: 1rem;
+    border: 1px solid #d4b059;
+    color: #ccc;
   }
   
-  button:hover {
-    background-color: #b99338;
+  .testimonial button:hover {
+    background-color: #d4b059;
+    color: #06080b;
+    font-weight: 600;
   }
   

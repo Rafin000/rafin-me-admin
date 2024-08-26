@@ -49,7 +49,7 @@ const Skill = ({ skill, onDelete, onEdit }) => {
         <>
           <img src={skill.icon_link} alt={`${skill.skill} Icon`} />
           <span className='skill-content'>{skill.skill}</span>
-          <div className='buttons'>
+          <div className='edit-buttons'>
             <button onClick={() => setIsEditing(true)}>Edit</button>
             <button onClick={onDelete}>Delete</button>
           </div>

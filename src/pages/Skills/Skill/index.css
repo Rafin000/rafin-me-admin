@@ -11,16 +11,13 @@
   .skill img {
     width: 12%;
   }
-  /* .skill:hover {
-    background: linear-gradient(to right, #c59e41, #b99338);
-  }
-   */
+
   .skill-content {
     color: #d4b059;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: larger;
   }
@@ -29,12 +26,44 @@
     color: #ffffff;
   }
 
-  .buttons {
+  .edit-buttons {
     display: flex;
     gap: 2rem
+  }
+
+  .edit-buttons {
+    display: flex;
+    gap: 2rem
+    
+  }
+
+
+  .edit-skill{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
   
   .edit-skill input{
     margin-bottom: 1rem;
+    border-radius: .875rem;
+  }
 
+  .skill button {
+    margin-bottom: 1rem;
+    border: 1px solid #d4b059;
+    color: #ccc;
+  }
+
+  .skill button:hover {
+    background-color: #d4b059;
+    color: #06080b;
+    font-weight: 600;
+    border: #ccc;
+  }
+
+  .edit-skill{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }

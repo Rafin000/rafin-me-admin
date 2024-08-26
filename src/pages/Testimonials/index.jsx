@@ -10,13 +10,15 @@ const Testimonials = () => {
     name: '',
     content: '',
     designation: '',
-    company: ''
+    company: '',
+    image_link: ''
   });
   const [addForm, setAddForm] = useState({
     name: '',
     content: '',
     designation: '',
     company: '',
+    image_link: '',
     user_id: '312b9d52-d0a2-476c-81be-88566b7b600b'
   });
   const [isAdding, setIsAdding] = useState(false);
@@ -45,7 +47,8 @@ const Testimonials = () => {
       name: testimonial.name,
       content: testimonial.content,
       designation: testimonial.designation || '',
-      company: testimonial.company || ''
+      company: testimonial.company || '',
+      image_link: testimonial.image_link || ''
     });
   };
 
@@ -110,7 +113,8 @@ const Testimonials = () => {
           name: '',
           content: '',
           designation: '',
-          company: ''
+          company: '',
+          image_link: ''
         });
         setIsAdding(false);
       })
@@ -149,41 +153,8 @@ const Testimonials = () => {
 
   return (
     <div className='testimonials-section'>
-      <h1>Testimonials</h1>
-      <button onClick={handleAddClick}>Add Testimonial</button>
-      {isAdding && (
-        <div className='edit-form'>
-          <input
-            type='text'
-            name='name'
-            value={addForm.name}
-            onChange={handleInputChange}
-            placeholder='Name'
-          />
-          <textarea
-            name='content'
-            value={addForm.content}
-            onChange={handleInputChange}
-            placeholder='Content'
-          />
-          <input
-            type='text'
-            name='designation'
-            value={addForm.designation}
-            onChange={handleInputChange}
-            placeholder='Designation'
-          />
-          <input
-            type='text'
-            name='company'
-            value={addForm.company}
-            onChange={handleInputChange}
-            placeholder='Company'
-          />
-          <button onClick={handleAddSaveClick}>Save</button>
-          <button onClick={handleCancelClick}>Cancel</button>
-        </div>
-      )}
+      <h2>Testimonials</h2>
+
       <div className='testimonials'>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className='testimonial'>
@@ -216,8 +187,17 @@ const Testimonials = () => {
                   onChange={handleInputChange}
                   placeholder='Company'
                 />
-                <button onClick={handleSaveClick}>Save</button>
-                <button onClick={handleCancelClick}>Cancel</button>
+                <input
+                  type='text'
+                  name='image_link'
+                  value={editForm.image_link}
+                  onChange={handleInputChange}
+                  placeholder='Image Link'
+                />
+                <div className='edit-form-buttons'>
+                  <button onClick={handleSaveClick}>Save</button>
+                  <button onClick={handleCancelClick}>Cancel</button>
+                </div>
               </div>
             ) : (
               <div className='testimonial-content'>
@@ -225,6 +205,7 @@ const Testimonials = () => {
                 <p>{testimonial.content}</p>
                 <p>{testimonial.designation || ''}</p>
                 <p>{testimonial.company || ''}</p>
+                <p>{testimonial.image_link || ''}</p>
                 <button onClick={() => handleEditClick(testimonial)}>Edit</button>
                 <button onClick={() => handleDeleteClick(testimonial.id)}>Delete</button>
               </div>
@@ -232,6 +213,49 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
+      <button onClick={handleAddClick}>Add Testimonial</button>
+      {isAdding && (
+        <div className='edit-form'>
+          <input
+            type='text'
+            name='name'
+            value={addForm.name}
+            onChange={handleInputChange}
+            placeholder='Name'
+          />
+          <textarea
+            name='content'
+            value={addForm.content}
+            onChange={handleInputChange}
+            placeholder='Content'
+          />
+          <input
+            type='text'
+            name='designation'
+            value={addForm.designation}
+            onChange={handleInputChange}
+            placeholder='Designation'
+          />
+          <input
+            type='text'
+            name='company'
+            value={addForm.company}
+            onChange={handleInputChange}
+            placeholder='Company'
+          />
+          <input
+            type='text'
+            name='image_link'
+            value={editForm.image_link}
+            onChange={handleInputChange}
+            placeholder='Image Link'
+          />
+          <div className='edit-form-buttons'>
+            <button onClick={handleAddSaveClick}>Save</button>
+            <button onClick={handleCancelClick}>Cancel</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
